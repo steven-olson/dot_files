@@ -33,7 +33,6 @@ map <C-W>o <Plug>(wintabs_only_window)
 command! Tabc WintabsCloseVimtab
 command! Tabo WintabsOnlyVimtab
 
-
 " General hotkeys etc
 nmap <C-B> :NERDTreeToggle<CR>
 nmap <silent> gd <Plug>(coc-definition)
