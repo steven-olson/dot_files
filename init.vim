@@ -8,10 +8,8 @@ filetype plugin indent on
 """"" PLUGIN STUFF
 call plug#begin()
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -20,7 +18,6 @@ Plug 'zefei/vim-wintabs-powerline'
 Plug 'MattesGroeger/vim-bookmarks'
 call plug#end()
 filetype plugin indent on
-
 
 " buffers
 map <C-H> <Plug>(wintabs_previous)
@@ -33,8 +30,10 @@ map <C-W>o <Plug>(wintabs_only_window)
 command! Tabc WintabsCloseVimtab
 command! Tabo WintabsOnlyVimtab
 
+
 " General hotkeys etc
 nmap <C-B> :NERDTreeToggle<CR>
+map <C-r> :NERDTreeFind<cr>
 nmap <silent> gd <Plug>(coc-definition)
 " Open definition in a split window
 nmap <silent> gv :vsp<CR><Plug>(coc-definition)<C-W>L
@@ -48,7 +47,8 @@ syntax on
 
 set clipboard+=unnamedplus
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+" let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = expand('/Users/stevo/.pyenv/shims/python')
 
 " theme stuff
 set background = "dark"
@@ -60,3 +60,5 @@ let g:lightline = {
 " powerline stuff? idk
 highlight link WintabsActive TabLineSel
 
+" vim for man pages
+runtime! ftplugin/man.vim
